@@ -1,0 +1,13 @@
+secrets.yaml
+*.log
+*.db
+*.db-*
+home-assistant_v2.db*
+.storage/
+.cloud/
+*.pid
+.uuid
+tts/
+deps/
+tmp/
+*.log.*

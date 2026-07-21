@@ -1,0 +1,11 @@
+{
+  "channel": 12,
+  "pan_id": "0x8a7b",
+  "ext_pan_id": "1269466419621988",
+  "network_name": "Santuario",
+  "network_key": "8c25ef719874941962422b96c4e555c4",
+  "pskc": "c4bbc29c0b18edeede2bc6e7086f5cbf",
+  "mesh_local_prefix": "fd88:1962:1964:4669::/64",
+  "security_policy": "672 onrc 0",
+  "active_timestamp": 1
+}
