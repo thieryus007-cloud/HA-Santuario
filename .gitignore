@@ -1,13 +1,24 @@
+# Secrets
 secrets.yaml
+
+# Bases de données et logs
 *.log
+*.log.*
 *.db
 *.db-*
 home-assistant_v2.db*
-.storage/
+
+# Dossiers système / cache régénérables
+.cache/
 .cloud/
-*.pid
-.uuid
+.storage/
+image/
 tts/
 deps/
 tmp/
-*.log.*
+www/community/
+
+# Divers
+*.pid
+.uuid
+.ha_run.lock
