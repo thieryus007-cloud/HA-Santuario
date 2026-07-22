@@ -14,7 +14,7 @@ sensor.backup_next_scheduled_automatic_backup;sensor;Backup Next scheduled autom
 sensor.backup_last_successful_automatic_backup;sensor;Backup Last successful automatic backup;2026-07-22T02:59:45+00:00;;timestamp;;None;Backup;Home Assistant;2026-07-22 08:13:37.477173+00:00
 sensor.backup_last_attempted_automatic_backup;sensor;Backup Last attempted automatic backup;2026-07-22T02:59:44+00:00;;timestamp;;None;Backup;Home Assistant;2026-07-22 08:13:37.477219+00:00
 zone.home;zone;Santuario;0;;;;None;None;None;2026-07-22 08:13:37.538721+00:00
-script.export_entities_csv;script;Export entités CSV complet;on;;;;None;None;None;2026-07-22 08:25:11.106869+00:00
+script.export_entities_csv;script;Export entités CSV complet;on;;;;None;None;None;2026-07-22 08:25:47.808757+00:00
 person.ha_admin;person;HA-admin;unknown;;;;None;None;None;2026-07-22 08:13:37.599710+00:00
 sun.sun;sun;Sun;above_horizon;;;;None;None;None;2026-07-22 08:13:37.624301+00:00
 sensor.sun_next_dawn;sensor;Sun Next dawn;2026-07-23T03:33:03+00:00;;timestamp;;None;Sun;None;2026-07-22 08:13:37.624615+00:00
@@ -46,7 +46,7 @@ sensor.openweathermap_visibility;sensor;OpenWeatherMap Visibility;10000;m;distan
 sensor.openweathermap_condition;sensor;OpenWeatherMap Condition;sunny;;;;Extérieur;OpenWeatherMap;OpenWeather;2026-07-22 08:13:38.573444+00:00
 sensor.openweathermap_weather_code;sensor;OpenWeatherMap Weather code;800;;;;Extérieur;OpenWeatherMap;OpenWeather;2026-07-22 08:13:38.573493+00:00
 weather.openweathermap;weather;OpenWeatherMap;sunny;;;;Extérieur;OpenWeatherMap;OpenWeather;2026-07-22 08:13:38.573635+00:00
-notify.file;notify;Notify_entities_export;2026-07-22T08:22:54.566858+00:00;;;;None;None;None;2026-07-22 08:22:54.566924+00:00
+notify.file;notify;Notify_entities_export;2026-07-22T08:25:11.130080+00:00;;;;None;None;None;2026-07-22 08:25:11.130131+00:00
 binary_sensor.shelly1_a4_input_0;binary_sensor;Shelly DEYE Input 0;off;;power;;Shelly;Shelly1 A4;Shelly;2026-07-22 08:13:38.588978+00:00
 binary_sensor.shelly1_a4_input_1;binary_sensor;Shelly DEYE Input 1;off;;power;;Shelly;Shelly1 A4;Shelly;2026-07-22 08:13:38.589052+00:00
 binary_sensor.chauffe_eau_overheating;binary_sensor;DEYE canal 2 Overheating;off;;problem;;Micro Onduleurs DEYE;Chauffe-eau;Shelly;2026-07-22 08:13:38.589198+00:00
@@ -103,32 +103,32 @@ select.chauffe_eau_operating_mode;select;Chauffe-eau Operating mode;heat_pump;;;
 sensor.chauffe_eau_current_temperature;sensor;Chauffe-eau Current temperature;40;°C;;measurement;Buanderie;Chauffe-eau;LGE;2026-07-22 08:20:02.506072+00:00
 water_heater.chauffe_eau;water_heater;Chauffe-eau;heat_pump;;;;Buanderie;Chauffe-eau;LGE;2026-07-22 08:13:39.150738+00:00
 sensor.gx_device_pv_on_output_phases;sensor;GX Device PV on output phases;1;phases;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.791589+00:00
-sensor.gx_device_pv_on_output_current_l1;sensor;GX Device PV on output current L1;4.0;A;current;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.002642+00:00
+sensor.gx_device_pv_on_output_current_l1;sensor;GX Device PV on output current L1;9.1;A;current;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.733391+00:00
 sensor.gx_device_dynamic_ess_reactive_strategy;sensor;GX Device Dynamic ESS reactive strategy;dess_disabled;;enum;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.792064+00:00
 sensor.gx_device_consumption_phases;sensor;GX Device Consumption phases;1;phases;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.792775+00:00
-sensor.gx_device_dc_battery_current;sensor;GX Device DC battery current;20.1;A;current;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.005992+00:00
+sensor.gx_device_dc_battery_current;sensor;GX Device DC battery current;57.2;A;current;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.733494+00:00
 sensor.gx_device_dc_battery_charge;sensor;GX Device DC battery charge;94.2;%;battery;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:24:29.207718+00:00
 sensor.gx_device_dynamic_ess_error;sensor;GX Device Dynamic ESS error;no_error;;enum;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.793219+00:00
 sensor.gx_device_grid_current_l1;sensor;GX Device Grid current L1;0.1;A;current;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.793345+00:00
 sensor.gx_device_dc_battery_state;sensor;GX Device DC battery state;charging;;enum;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.793467+00:00
-sensor.gx_device_dc_battery_power;sensor;GX Device DC battery power;1082.0;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.005761+00:00
+sensor.gx_device_dc_battery_power;sensor;GX Device DC battery power;3085.9;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.733623+00:00
 sensor.gx_device_grid_phases;sensor;GX Device Grid phases;1;phases;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.793700+00:00
 sensor.gx_device_grid_power_l1;sensor;GX Device Grid power L1;0.0;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.793822+00:00
 binary_sensor.gx_device_dynamic_ess_available;binary_sensor;GX Device Dynamic ESS available;off;;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.795003+00:00
 sensor.gx_device_system_state;sensor;GX Device System state;inverting;;enum;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.795219+00:00
-sensor.gx_device_pv_current;sensor;GX Device PV current;17.4;A;current;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.004658+00:00
+sensor.gx_device_pv_current;sensor;GX Device PV current;30.7;A;current;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.733747+00:00
 sensor.gx_device_dynamic_ess_target_soc;sensor;GX Device Dynamic ESS target SoC;0.0;%;battery;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.795553+00:00
 sensor.gx_device_dynamic_ess_number_of_schedules;sensor;GX Device Dynamic ESS number of schedules;48;schedules;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.795681+00:00
-sensor.gx_device_consumption_current_l1;sensor;GX Device Consumption current L1;2.3;A;current;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.004441+00:00
-sensor.gx_device_critical_loads_on_l1;sensor;GX Device Critical loads on L1;820.5;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.002908+00:00
+sensor.gx_device_consumption_current_l1;sensor;GX Device Consumption current L1;1.8;A;current;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.733804+00:00
+sensor.gx_device_critical_loads_on_l1;sensor;GX Device Critical loads on L1;611.5;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.733861+00:00
 binary_sensor.gx_device_dynamic_ess_active;binary_sensor;GX Device Dynamic ESS active;off;;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.796056+00:00
 sensor.gx_device_consumption_on_output_phases;sensor;GX Device Consumption on output phases;1;phases;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.796178+00:00
-sensor.gx_device_dc_consumption;sensor;GX Device DC consumption;-121.7;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.006072+00:00
-sensor.gx_device_consumption_power_l1;sensor;GX Device Consumption power L1;820.5;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.006108+00:00
+sensor.gx_device_dc_consumption;sensor;GX Device DC consumption;-79.9;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.733942+00:00
+sensor.gx_device_consumption_power_l1;sensor;GX Device Consumption power L1;611.5;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.733997+00:00
 sensor.gx_device_ac_active_input_source;sensor;GX Device AC active input source;not_connected;;enum;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.796528+00:00
-sensor.gx_device_pv_on_output_power_l1;sensor;GX Device PV on output power L1;892.5;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.006034+00:00
-sensor.gx_device_dc_battery_voltage;sensor;GX Device DC battery voltage;53.82;V;voltage;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:11.012465+00:00
-sensor.gx_device_pv_power;sensor;GX Device PV power;938.7;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.004573+00:00
+sensor.gx_device_pv_on_output_power_l1;sensor;GX Device PV on output power L1;2074.5;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.734090+00:00
+sensor.gx_device_dc_battery_voltage;sensor;GX Device DC battery voltage;53.95;V;voltage;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.734171+00:00
+sensor.gx_device_pv_power;sensor;GX Device PV power;1664.8;W;power;measurement;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.734230+00:00
 time.gx_device_ess_batterylife_schedule_charge_1_start;time;GX Device ESS BatteryLife schedule charge 1 start;00:00:00;;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.797243+00:00
 number.gx_device_ess_batterylife_schedule_charge_3_duration;number;GX Device ESS BatteryLife schedule charge 3 duration;0.0;min;duration;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.797454+00:00
 time.gx_device_ess_batterylife_schedule_charge_3_start;time;GX Device ESS BatteryLife schedule charge 3 start;00:00:00;;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.797561+00:00
@@ -175,9 +175,9 @@ switch.gx_device_ess_batterylife_schedule_charge_1_enabled;switch;GX Device ESS 
 switch.gx_device_ess_batterylife_schedule_charge_3_enabled;switch;GX Device ESS BatteryLife schedule charge 3 enabled;off;;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.823053+00:00
 sensor.gx_device_ess_batterylife_state;sensor;GX Device ESS BatteryLife state;with_battery_life;;enum;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.823138+00:00
 select.gx_device_ess_mode;select;GX Device ESS mode;optimized_battery_life;;;;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.823208+00:00
-sensor.gx_device_dc_battery_charge_energy;sensor;GX Device DC battery charge energy;0.446;kWh;energy;total;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.005872+00:00
+sensor.gx_device_dc_battery_charge_energy;sensor;GX Device DC battery charge energy;0.457;kWh;energy;total;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.741694+00:00
 sensor.gx_device_dc_battery_discharge_energy;sensor;GX Device DC battery discharge energy;0.0;kWh;energy;total;Victron;GX Device;Victron Energy;2026-07-22 08:13:39.823383+00:00
-sensor.gx_device_pv_energy;sensor;GX Device PV energy;0.293;kWh;energy;total;Victron;GX Device;Victron Energy;2026-07-22 08:25:10.004625+00:00
+sensor.gx_device_pv_energy;sensor;GX Device PV energy;0.301;kWh;energy;total;Victron;GX Device;Victron Energy;2026-07-22 08:25:39.741757+00:00
 sensor.shelly1_a4_current_on_l1;sensor;Shelly1 A4 Current on L1;0.0;A;current;measurement;Shelly;Shelly1 A4;Victron Energy;2026-07-22 08:13:39.823551+00:00
 sensor.shelly1_a4_voltage_on_l1;sensor;Shelly1 A4 Voltage on L1;0.0;V;voltage;measurement;Shelly;Shelly1 A4;Victron Energy;2026-07-22 08:13:39.823637+00:00
 sensor.shelly1_a4_power;sensor;Shelly1 A4 Power;0.0;W;power;measurement;Shelly;Shelly1 A4;Victron Energy;2026-07-22 08:13:39.823713+00:00
@@ -186,7 +186,7 @@ sensor.shelly1_a4_consumption_on_l1;sensor;Shelly1 A4 Consumption on L1;5.9;kWh;
 sensor.shelly1_a4_consumption;sensor;Shelly1 A4 Consumption;5.9;kWh;energy;total;Shelly;Shelly1 A4;Victron Energy;2026-07-22 08:13:39.823943+00:00
 sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_max_power_yesterday;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Max power yesterday;2221.0;W;power;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.824026+00:00
 sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_min_battery_voltage_today;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Min battery voltage today;52.61;V;voltage;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.824102+00:00
-sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_pv_yield_power;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) PV yield power;616.4;W;power;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:09.817595+00:00
+sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_pv_yield_power;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) PV yield power;832.0;W;power;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:39.732026+00:00
 sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_max_power_today;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Max power today;1599.0;W;power;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.824285+00:00
 number.smartsolar_mppt_ve_can_250_100_rev2_id_273_charge_current_limit;number;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Charge current limit;95.0;A;current;;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.824365+00:00
 binary_sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_load_state;binary_sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Load state;on;;;;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.824434+00:00
@@ -196,25 +196,25 @@ sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_max_battery_voltage_today;sens
 sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_total_yield;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Total yield;1682.0;kWh;energy;total;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:22:21.827621+00:00
 switch.smartsolar_mppt_ve_can_250_100_rev2_id_273_relay_state;switch;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Relay state;off;;;;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.824806+00:00
 sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_state;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) State;bulk;;enum;;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.824881+00:00
-sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_time_in_bulk_today;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Time in bulk today;269;min;duration;total_increasing;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:24:29.195113+00:00
-sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_yield_today;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Yield today;1.68;kWh;energy;total;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:24:39.723898+00:00
-sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_pv_bus_voltage;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) PV bus voltage;117.82;V;voltage;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:09.817420+00:00
-sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_dc_battery_bus_current;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) DC (battery) bus current;11.1;A;current;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:09.816374+00:00
+sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_time_in_bulk_today;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Time in bulk today;270;min;duration;total_increasing;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:29.175856+00:00
+sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_yield_today;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Yield today;1.69;kWh;energy;total;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:39.732562+00:00
+sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_pv_bus_voltage;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) PV bus voltage;131.92;V;voltage;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:39.732651+00:00
+sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_dc_battery_bus_current;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) DC (battery) bus current;14.9;A;current;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:39.732720+00:00
 sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_error_code;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Error code;no_error;;enum;;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.825245+00:00
-sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_dc_battery_bus_voltage;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) DC (battery) bus voltage;53.88;V;voltage;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:09.816542+00:00
+sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_dc_battery_bus_voltage;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) DC (battery) bus voltage;54.11;V;voltage;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:39.732821+00:00
 switch.smartsolar_mppt_ve_can_250_100_rev2_id_273;switch;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);on;;;;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.825383+00:00
 sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_time_in_float_today;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Time in float today;0;min;duration;total_increasing;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.825459+00:00
 sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_mppt_operation_mode;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) MPPT operation mode;mppt_active;;enum;;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.825530+00:00
 sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_yield_yesterday;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) Yield yesterday;9.74;kWh;energy;total;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:13:39.825601+00:00
-sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_pv_current;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) PV current;5.26;A;current;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:09.817514+00:00
+sensor.smartsolar_mppt_ve_can_250_100_rev2_id_273_pv_current;sensor;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273) PV current;6.31;A;current;measurement;MPPT Victron;SmartSolar MPPT VE.Can 250/100 rev2 (ID: 273);Victron Energy;2026-07-22 08:25:39.741618+00:00
 sensor.temperature_exterieure_temperature;sensor;Temperature Exterieure Temperature;27.6;°C;temperature;measurement;Extérieur;Temperature Exterieure;Victron Energy;2026-07-22 08:18:39.683854+00:00
 sensor.temperature_exterieure_sensor_type;sensor;Temperature Exterieure Sensor type;outdoor;;enum;;Extérieur;Temperature Exterieure;Victron Energy;2026-07-22 08:13:39.825818+00:00
-sensor.temperature_exterieure_sensor_status;sensor;Temperature Exterieure Sensor status;ok;;enum;;Extérieur;Temperature Exterieure;Victron Energy;2026-07-22 08:24:29.230987+00:00
+sensor.temperature_exterieure_sensor_status;sensor;Temperature Exterieure Sensor status;ok;;enum;;Extérieur;Temperature Exterieure;Victron Energy;2026-07-22 08:25:29.210310+00:00
 sensor.temperature_exterieure_pressure;sensor;Temperature Exterieure Pressure;992.0;;;measurement;Extérieur;Temperature Exterieure;Victron Energy;2026-07-22 08:13:39.825966+00:00
 sensor.temperature_exterieure_humidity;sensor;Temperature Exterieure Humidity;61.0;%;;measurement;Extérieur;Temperature Exterieure;Victron Energy;2026-07-22 08:13:39.826035+00:00
-sensor.et112_maison_id_30_current_on_l1;sensor;ET112-Maison (ID: 30) Current on L1;3.2;A;current;measurement;ET112 Mesure;ET112-Maison (ID: 30);Victron Energy;2026-07-22 08:25:10.089355+00:00
-sensor.et112_maison_id_30_power_on_l1;sensor;ET112-Maison (ID: 30) Power on L1;694.0;W;power;measurement;ET112 Mesure;ET112-Maison (ID: 30);Victron Energy;2026-07-22 08:25:10.089122+00:00
-sensor.et112_maison_id_30_voltage_on_l1;sensor;ET112-Maison (ID: 30) Voltage on L1;230.4;V;voltage;measurement;ET112 Mesure;ET112-Maison (ID: 30);Victron Energy;2026-07-22 08:25:10.089287+00:00
+sensor.et112_maison_id_30_current_on_l1;sensor;ET112-Maison (ID: 30) Current on L1;3.3;A;current;measurement;ET112 Mesure;ET112-Maison (ID: 30);Victron Energy;2026-07-22 08:25:39.733144+00:00
+sensor.et112_maison_id_30_power_on_l1;sensor;ET112-Maison (ID: 30) Power on L1;696.0;W;power;measurement;ET112 Mesure;ET112-Maison (ID: 30);Victron Energy;2026-07-22 08:25:39.733206+00:00
+sensor.et112_maison_id_30_voltage_on_l1;sensor;ET112-Maison (ID: 30) Voltage on L1;230.5;V;voltage;measurement;ET112 Mesure;ET112-Maison (ID: 30);Victron Energy;2026-07-22 08:25:39.733268+00:00
 sensor.et112_maison_id_30_consumption_on_l1;sensor;ET112-Maison (ID: 30) Consumption on L1;4188.5;kWh;energy;total;ET112 Mesure;ET112-Maison (ID: 30);Victron Energy;2026-07-22 08:20:10.082024+00:00
 switch.tongou_3_state;switch;Tongou 3 State;on;;;;Tasmota;Tongou 3;Victron Energy;2026-07-22 08:13:39.826385+00:00
 number.pwm_2_id_50_dimming;number;PWM 2 (ID: 50) Dimming;0.0;%;;;GX IO-Extender;PWM 2 (ID: 50);Victron Energy;2026-07-22 08:13:39.826463+00:00
@@ -237,30 +237,30 @@ number.pwm_1_id_50_dimming;number;PWM 1 (ID: 50) Dimming;97.0;%;;;GX IO-Extender
 switch.output_8_id_50_state;switch;Output 8 (ID: 50) State;off;;;;GX IO-Extender;Output 8 (ID: 50);Victron Energy;2026-07-22 08:13:39.827658+00:00
 switch.output_7_id_50_state;switch;Output 7 (ID: 50) State;off;;;;GX IO-Extender;Output 7 (ID: 50);Victron Energy;2026-07-22 08:13:39.827716+00:00
 sensor.bms_620ah_id_153_temperature;sensor;BMS-620Ah (ID: 153) Temperature;25.0;°C;temperature;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:13:39.827796+00:00
-sensor.bms_620ah_id_153_consumed_amp_hours;sensor;BMS-620Ah (ID: 153) Consumed amp-hours;49.6;Ah;;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:21:10.168991+00:00
-sensor.bms_620ah_id_153_charge;sensor;BMS-620Ah (ID: 153) Charge;92.0;%;battery;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:21:10.169051+00:00
+sensor.bms_620ah_id_153_consumed_amp_hours;sensor;BMS-620Ah (ID: 153) Consumed amp-hours;49.0;Ah;;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:39.735201+00:00
+sensor.bms_620ah_id_153_charge;sensor;BMS-620Ah (ID: 153) Charge;92.1;%;battery;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:39.735281+00:00
 sensor.bms_620ah_id_153_dc_bus_voltage;sensor;BMS-620Ah (ID: 153) DC bus voltage;53.7;V;voltage;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:10.064708+00:00
 sensor.bms_620ah_id_153_installed_capacity;sensor;BMS-620Ah (ID: 153) Installed capacity;620.0;Ah;;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:13:39.828087+00:00
 sensor.bms_620ah_id_153_maximum_cell_temperature;sensor;BMS-620Ah (ID: 153) Maximum cell temperature;25.0;°C;temperature;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:13:39.828154+00:00
 sensor.bms_620ah_id_153_cell_imbalance;sensor;BMS-620Ah (ID: 153) Cell imbalance;no_alarm;;enum;;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:13:39.828223+00:00
-sensor.bms_620ah_id_153_power;sensor;BMS-620Ah (ID: 153) Power;343.7;W;power;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:10.064610+00:00
+sensor.bms_620ah_id_153_power;sensor;BMS-620Ah (ID: 153) Power;918.3;W;power;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:39.735566+00:00
 sensor.bms_620ah_id_153_maximum_cell_voltage;sensor;BMS-620Ah (ID: 153) Maximum cell voltage;3.373;V;voltage;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:10.064536+00:00
 sensor.bms_620ah_id_153_time_to_go;sensor;BMS-620Ah (ID: 153) Time to go;0;s;duration;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:13:39.828426+00:00
-sensor.bms_620ah_id_153_dc_bus_current;sensor;BMS-620Ah (ID: 153) DC bus current;6.4;A;current;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:10.064429+00:00
-sensor.bms_620ah_id_153_minimum_cell_voltage;sensor;BMS-620Ah (ID: 153) Minimum cell voltage;3.359;V;voltage;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:10.064500+00:00
-sensor.bms_620ah_id_153_capacity;sensor;BMS-620Ah (ID: 153) Capacity;577.8;Ah;;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:21:10.169076+00:00
+sensor.bms_620ah_id_153_dc_bus_current;sensor;BMS-620Ah (ID: 153) DC bus current;17.1;A;current;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:39.735721+00:00
+sensor.bms_620ah_id_153_minimum_cell_voltage;sensor;BMS-620Ah (ID: 153) Minimum cell voltage;3.358;V;voltage;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:39.735905+00:00
+sensor.bms_620ah_id_153_capacity;sensor;BMS-620Ah (ID: 153) Capacity;578.4;Ah;;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:25:39.736025+00:00
 sensor.bms_620ah_id_153_minimum_cell_temperature;sensor;BMS-620Ah (ID: 153) Minimum cell temperature;25.0;°C;temperature;measurement;Batterie;BMS-620Ah (ID: 153);Victron Energy;2026-07-22 08:13:39.828701+00:00
 sensor.capteur_irradiance_id_40_today_s_yield;sensor;Capteur Irradiance (ID: 40) Today's yield;6.0;kWh;energy;total;Extérieur;Capteur Irradiance (ID: 40);Victron Energy;2026-07-22 08:24:39.727748+00:00
-sensor.capteur_irradiance_id_40_irradiance;sensor;Capteur Irradiance (ID: 40) Irradiance;900.0;W/m²;irradiance;measurement;Extérieur;Capteur Irradiance (ID: 40);Victron Energy;2026-07-22 08:24:39.727808+00:00
+sensor.capteur_irradiance_id_40_irradiance;sensor;Capteur Irradiance (ID: 40) Irradiance;351.0;W/m²;irradiance;measurement;Extérieur;Capteur Irradiance (ID: 40);Victron Energy;2026-07-22 08:25:39.736314+00:00
 switch.tongou_5_state;switch;Tongou 5 State;on;;;;Tasmota;Tongou 5;Victron Energy;2026-07-22 08:13:39.828909+00:00
 sensor.bms_320ah_id_152_installed_capacity;sensor;BMS-320Ah (ID: 152) Installed capacity;320.0;Ah;;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:13:39.828977+00:00
 sensor.bms_320ah_id_152_time_to_go;sensor;BMS-320Ah (ID: 152) Time to go;0;s;duration;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:13:39.829047+00:00
 sensor.bms_320ah_id_152_maximum_cell_voltage;sensor;BMS-320Ah (ID: 152) Maximum cell voltage;3.364;V;voltage;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:10.064363+00:00
 sensor.bms_320ah_id_152_maximum_cell_temperature;sensor;BMS-320Ah (ID: 152) Maximum cell temperature;25.0;°C;temperature;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:23:10.050370+00:00
 sensor.bms_320ah_id_152_charge;sensor;BMS-320Ah (ID: 152) Charge;96.0;%;battery;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:10.064087+00:00
-sensor.bms_320ah_id_152_minimum_cell_voltage;sensor;BMS-320Ah (ID: 152) Minimum cell voltage;3.36;V;voltage;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:10.063992+00:00
-sensor.bms_320ah_id_152_dc_bus_current;sensor;BMS-320Ah (ID: 152) DC bus current;5.8;A;current;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:10.064047+00:00
-sensor.bms_320ah_id_152_power;sensor;BMS-320Ah (ID: 152) Power;311.5;W;power;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:10.063477+00:00
+sensor.bms_320ah_id_152_minimum_cell_voltage;sensor;BMS-320Ah (ID: 152) Minimum cell voltage;3.358;V;voltage;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:39.736541+00:00
+sensor.bms_320ah_id_152_dc_bus_current;sensor;BMS-320Ah (ID: 152) DC bus current;10.5;A;current;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:39.736593+00:00
+sensor.bms_320ah_id_152_power;sensor;BMS-320Ah (ID: 152) Power;563.9;W;power;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:39.736640+00:00
 sensor.bms_320ah_id_152_consumed_amp_hours;sensor;BMS-320Ah (ID: 152) Consumed amp-hours;12.8;Ah;;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:10.064335+00:00
 sensor.bms_320ah_id_152_cell_imbalance;sensor;BMS-320Ah (ID: 152) Cell imbalance;no_alarm;;enum;;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:13:39.829581+00:00
 sensor.bms_320ah_id_152_dc_bus_voltage;sensor;BMS-320Ah (ID: 152) DC bus voltage;53.7;V;voltage;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:10.064303+00:00
@@ -268,15 +268,15 @@ sensor.bms_320ah_id_152_temperature;sensor;BMS-320Ah (ID: 152) Temperature;25.0;
 sensor.bms_320ah_id_152_capacity;sensor;BMS-320Ah (ID: 152) Capacity;307.2;Ah;;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:25:10.064247+00:00
 sensor.bms_320ah_id_152_minimum_cell_temperature;sensor;BMS-320Ah (ID: 152) Minimum cell temperature;25.0;°C;temperature;measurement;Batterie;BMS-320Ah (ID: 152);Victron Energy;2026-07-22 08:13:39.829848+00:00
 switch.tongou_2_state;switch;Tongou 2 State;on;;;;Tasmota;Tongou 2;Victron Energy;2026-07-22 08:13:39.829907+00:00
-sensor.et112_micro_onduleurs_power_l1;sensor;ET112-Micro-Onduleurs Power L1;892.5;W;power;measurement;ET112 Mesure;ET112-Micro-Onduleurs;Victron Energy;2026-07-22 08:25:10.072505+00:00
-sensor.et112_micro_onduleurs_power_total;sensor;ET112-Micro-Onduleurs Power total;892.5;W;power;measurement;ET112 Mesure;ET112-Micro-Onduleurs;Victron Energy;2026-07-22 08:25:10.072225+00:00
-sensor.et112_micro_onduleurs_current_l1;sensor;ET112-Micro-Onduleurs Current L1;4.0;A;current;measurement;ET112 Mesure;ET112-Micro-Onduleurs;Victron Energy;2026-07-22 08:25:10.072463+00:00
-sensor.et112_micro_onduleurs_voltage_l1;sensor;ET112-Micro-Onduleurs Voltage L1;230.1;V;voltage;measurement;ET112 Mesure;ET112-Micro-Onduleurs;Victron Energy;2026-07-22 08:25:10.072408+00:00
+sensor.et112_micro_onduleurs_power_l1;sensor;ET112-Micro-Onduleurs Power L1;2074.5;W;power;measurement;ET112 Mesure;ET112-Micro-Onduleurs;Victron Energy;2026-07-22 08:25:39.736921+00:00
+sensor.et112_micro_onduleurs_power_total;sensor;ET112-Micro-Onduleurs Power total;2074.5;W;power;measurement;ET112 Mesure;ET112-Micro-Onduleurs;Victron Energy;2026-07-22 08:25:39.736968+00:00
+sensor.et112_micro_onduleurs_current_l1;sensor;ET112-Micro-Onduleurs Current L1;9.1;A;current;measurement;ET112 Mesure;ET112-Micro-Onduleurs;Victron Energy;2026-07-22 08:25:39.737013+00:00
+sensor.et112_micro_onduleurs_voltage_l1;sensor;ET112-Micro-Onduleurs Voltage L1;230.6;V;voltage;measurement;ET112 Mesure;ET112-Micro-Onduleurs;Victron Energy;2026-07-22 08:25:39.737056+00:00
 sensor.et112_micro_onduleurs_yield_l1;sensor;ET112-Micro-Onduleurs Yield L1;1647.5;kWh;energy;total;ET112 Mesure;ET112-Micro-Onduleurs;Victron Energy;2026-07-22 08:23:39.721025+00:00
 sensor.et112_micro_onduleurs_total_yield;sensor;ET112-Micro-Onduleurs Total yield;1647.5;kWh;energy;total;ET112 Mesure;ET112-Micro-Onduleurs;Victron Energy;2026-07-22 08:23:39.721053+00:00
 sensor.smartsolar_charger_mppt_150_35_id_289_max_power_yesterday;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Max power yesterday;1157.0;W;power;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.830462+00:00
 sensor.smartsolar_charger_mppt_150_35_id_289_min_battery_voltage_today;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Min battery voltage today;52.85;V;voltage;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.830531+00:00
-sensor.smartsolar_charger_mppt_150_35_id_289_pv_yield_power;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) PV yield power;345.0;W;power;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:10.648721+00:00
+sensor.smartsolar_charger_mppt_150_35_id_289_pv_yield_power;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) PV yield power;892.0;W;power;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:39.737149+00:00
 sensor.smartsolar_charger_mppt_150_35_id_289_max_power_today;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Max power today;961.0;W;power;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.830665+00:00
 number.smartsolar_charger_mppt_150_35_id_289_charge_current_limit;number;SmartSolar Charger MPPT 150/35 (ID: 289) Charge current limit;35.0;A;current;;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.830735+00:00
 sensor.smartsolar_charger_mppt_150_35_id_289_time_in_absorption_today;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Time in absorption today;0;min;duration;total_increasing;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.830809+00:00
@@ -285,46 +285,46 @@ sensor.smartsolar_charger_mppt_150_35_id_289_device_off_reason;sensor;SmartSolar
 sensor.smartsolar_charger_mppt_150_35_id_289_max_battery_voltage_today;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Max battery voltage today;54.55;V;voltage;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.831003+00:00
 sensor.smartsolar_charger_mppt_150_35_id_289_total_yield;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Total yield;593.3;kWh;energy;total;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:21:29.219647+00:00
 sensor.smartsolar_charger_mppt_150_35_id_289_state;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) State;bulk;;enum;;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.831139+00:00
-sensor.smartsolar_charger_mppt_150_35_id_289_time_in_bulk_today;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Time in bulk today;267;min;duration;total_increasing;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:24:39.731636+00:00
-sensor.smartsolar_charger_mppt_150_35_id_289_yield_today;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Yield today;0.98;kWh;energy;total;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:24:29.225652+00:00
-sensor.smartsolar_charger_mppt_150_35_id_289_pv_bus_voltage;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) PV bus voltage;115.56;V;voltage;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:10.648298+00:00
-sensor.smartsolar_charger_mppt_150_35_id_289_dc_battery_bus_current;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) DC (battery) bus current;6.2;A;current;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:10.650617+00:00
+sensor.smartsolar_charger_mppt_150_35_id_289_time_in_bulk_today;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Time in bulk today;268;min;duration;total_increasing;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:39.739614+00:00
+sensor.smartsolar_charger_mppt_150_35_id_289_yield_today;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Yield today;0.99;kWh;energy;total;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:29.201849+00:00
+sensor.smartsolar_charger_mppt_150_35_id_289_pv_bus_voltage;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) PV bus voltage;115.92;V;voltage;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:39.739666+00:00
+sensor.smartsolar_charger_mppt_150_35_id_289_dc_battery_bus_current;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) DC (battery) bus current;16.2;A;current;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:39.739709+00:00
 sensor.smartsolar_charger_mppt_150_35_id_289_error_code;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Error code;no_error;;enum;;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.831493+00:00
-sensor.smartsolar_charger_mppt_150_35_id_289_dc_battery_bus_voltage;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) DC (battery) bus voltage;54.06;V;voltage;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:10.648823+00:00
+sensor.smartsolar_charger_mppt_150_35_id_289_dc_battery_bus_voltage;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) DC (battery) bus voltage;54.37;V;voltage;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:39.739778+00:00
 switch.smartsolar_charger_mppt_150_35_id_289;switch;SmartSolar Charger MPPT 150/35 (ID: 289);on;;;;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.831623+00:00
 sensor.smartsolar_charger_mppt_150_35_id_289_time_in_float_today;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Time in float today;0;min;duration;total_increasing;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.831697+00:00
 sensor.smartsolar_charger_mppt_150_35_id_289_mppt_operation_mode;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) MPPT operation mode;mppt_active;;enum;;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.831768+00:00
 sensor.smartsolar_charger_mppt_150_35_id_289_yield_yesterday;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) Yield yesterday;2.19;kWh;energy;total;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:13:39.831835+00:00
-sensor.smartsolar_charger_mppt_150_35_id_289_pv_current;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) PV current;3.02;A;current;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:10.648614+00:00
+sensor.smartsolar_charger_mppt_150_35_id_289_pv_current;sensor;SmartSolar Charger MPPT 150/35 (ID: 289) PV current;7.69;A;current;measurement;MPPT Victron;SmartSolar Charger MPPT 150/35 (ID: 289);Victron Energy;2026-07-22 08:25:39.741657+00:00
 switch.tongou_4_state;switch;Tongou 4 State;on;;;;Tasmota;Tongou 4;Victron Energy;2026-07-22 08:13:39.831958+00:00
 sensor.et112_reseau_id_31_feed_in_on_l1;sensor;ET112-Réseau (ID: 31) Feed-in on L1;0.0;kWh;energy;total;ET112 Mesure;ET112-Réseau (ID: 31);Victron Energy;2026-07-22 08:13:39.832024+00:00
 sensor.et112_reseau_id_31_grid_consumption_on_l1;sensor;ET112-Réseau (ID: 31) Grid consumption on L1;235.6;kWh;energy;total;ET112 Mesure;ET112-Réseau (ID: 31);Victron Energy;2026-07-22 08:13:39.832092+00:00
 sensor.et112_reseau_id_31_current_on_l1;sensor;ET112-Réseau (ID: 31) Current on L1;0.1;A;current;measurement;ET112 Mesure;ET112-Réseau (ID: 31);Victron Energy;2026-07-22 08:13:39.832156+00:00
 sensor.et112_reseau_id_31_voltage_on_l1;sensor;ET112-Réseau (ID: 31) Voltage on L1;221.3;V;voltage;measurement;ET112 Mesure;ET112-Réseau (ID: 31);Victron Energy;2026-07-22 08:13:39.832220+00:00
 sensor.et112_reseau_id_31_power_on_l1;sensor;ET112-Réseau (ID: 31) Power on L1;0.0;W;power;measurement;ET112 Mesure;ET112-Réseau (ID: 31);Victron Energy;2026-07-22 08:13:39.832292+00:00
-sensor.bms_360ah_id_151_consumed_amp_hours;sensor;BMS-360Ah (ID: 151) Consumed amp-hours;10.8;Ah;;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:24:10.094832+00:00
-sensor.bms_360ah_id_151_charge;sensor;BMS-360Ah (ID: 151) Charge;97.0;%;battery;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:24:10.094602+00:00
-sensor.bms_360ah_id_151_capacity;sensor;BMS-360Ah (ID: 151) Capacity;349.2;Ah;;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:24:10.088691+00:00
+sensor.bms_360ah_id_151_consumed_amp_hours;sensor;BMS-360Ah (ID: 151) Consumed amp-hours;10.4;Ah;;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:39.740028+00:00
+sensor.bms_360ah_id_151_charge;sensor;BMS-360Ah (ID: 151) Charge;97.1;%;battery;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:39.740069+00:00
+sensor.bms_360ah_id_151_capacity;sensor;BMS-360Ah (ID: 151) Capacity;349.6;Ah;;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:39.740108+00:00
 sensor.bms_360ah_id_151_temperature;sensor;BMS-360Ah (ID: 151) Temperature;27.0;°C;temperature;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:18:39.692404+00:00
 sensor.bms_360ah_id_151_installed_capacity;sensor;BMS-360Ah (ID: 151) Installed capacity;360.0;Ah;;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:13:39.832614+00:00
-sensor.bms_360ah_id_151_minimum_cell_voltage;sensor;BMS-360Ah (ID: 151) Minimum cell voltage;3.36;V;voltage;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:10.040524+00:00
-sensor.bms_360ah_id_151_dc_bus_current;sensor;BMS-360Ah (ID: 151) DC bus current;7.8;A;current;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:10.036760+00:00
+sensor.bms_360ah_id_151_minimum_cell_voltage;sensor;BMS-360Ah (ID: 151) Minimum cell voltage;3.364;V;voltage;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:39.740207+00:00
+sensor.bms_360ah_id_151_dc_bus_current;sensor;BMS-360Ah (ID: 151) DC bus current;17.1;A;current;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:39.740251+00:00
 sensor.bms_360ah_id_151_maximum_cell_temperature;sensor;BMS-360Ah (ID: 151) Maximum cell temperature;27.0;°C;temperature;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:18:39.692613+00:00
 sensor.bms_360ah_id_151_dc_bus_voltage;sensor;BMS-360Ah (ID: 151) DC bus voltage;53.8;V;voltage;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:24:39.732414+00:00
 sensor.bms_360ah_id_151_cell_imbalance;sensor;BMS-360Ah (ID: 151) Cell imbalance;no_alarm;;enum;;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:13:39.832931+00:00
 sensor.bms_360ah_id_151_minimum_cell_temperature;sensor;BMS-360Ah (ID: 151) Minimum cell temperature;25.0;°C;temperature;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:13:39.832995+00:00
-sensor.bms_360ah_id_151_maximum_cell_voltage;sensor;BMS-360Ah (ID: 151) Maximum cell voltage;3.367;V;voltage;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:10.042454+00:00
+sensor.bms_360ah_id_151_maximum_cell_voltage;sensor;BMS-360Ah (ID: 151) Maximum cell voltage;3.371;V;voltage;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:39.740399+00:00
 sensor.bms_360ah_id_151_time_to_go;sensor;BMS-360Ah (ID: 151) Time to go;0;s;duration;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:13:39.833120+00:00
-sensor.bms_360ah_id_151_power;sensor;BMS-360Ah (ID: 151) Power;419.6;W;power;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:10.042305+00:00
+sensor.bms_360ah_id_151_power;sensor;BMS-360Ah (ID: 151) Power;920.0;W;power;measurement;Batterie;BMS-360Ah (ID: 151);Victron Energy;2026-07-22 08:25:39.740467+00:00
 number.multiplus_ii_48_5000_70_50_id_275_assist_current_boost_factor;number;MultiPlus-II 48/5000/70-50 (ID: 275) Assist current boost factor;2.0;;;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.833255+00:00
 switch.multiplus_ii_48_5000_70_50_id_275_0_powerassist_enabled;switch;MultiPlus-II 48/5000/70-50 (ID: 275) 0 PowerAssist enabled;on;;;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.833316+00:00
-sensor.multiplus_ii_48_5000_70_50_id_275_0_inverted_power;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) 0 inverted power;72.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:09.803142+00:00
+sensor.multiplus_ii_48_5000_70_50_id_275_0_inverted_power;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) 0 inverted power;1497.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:39.740527+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_input_current_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Input current L1;0.0;A;current;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.833450+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_ripple_alarm;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Ripple alarm;no_alarm;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.833526+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_state;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) State;inverting;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.833594+00:00
 select.multiplus_ii_48_5000_70_50_id_275;select;MultiPlus-II 48/5000/70-50 (ID: 275);on;;;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.833657+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_phase_rotation_alarm;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Phase rotation alarm;no_alarm;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.833800+00:00
-sensor.multiplus_ii_48_5000_70_50_id_275_0_line_1_output_power;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) 0 line 1 output power;-72.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:09.803019+00:00
+sensor.multiplus_ii_48_5000_70_50_id_275_0_line_1_output_power;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) 0 line 1 output power;-1497.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:39.740668+00:00
 binary_sensor.multiplus_ii_48_5000_70_50_id_275_connected;binary_sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Connected;on;;;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.833928+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_energy_from_ac_out_to_ac_in_2;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Energy from AC-out to AC-in-2;0.0;kWh;energy;total;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834004+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_input_voltage_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Input voltage L1;0.0;V;voltage;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834080+00:00
@@ -332,32 +332,32 @@ switch.multiplus_ii_48_5000_70_50_id_275_grid_lost_alarm_setting;switch;MultiPlu
 sensor.multiplus_ii_48_5000_70_50_id_275_voltage_sensor_alarm;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Voltage sensor alarm;no_alarm;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834204+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_high_dc_current_alarm;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) High DC current alarm;no_alarm;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834267+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_0_line_l2_input_power;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) 0 line L2 input power;0.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834334+00:00
-sensor.multiplus_ii_48_5000_70_50_id_275_output_voltage_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Output voltage L1;229.28;V;voltage;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:09.801597+00:00
+sensor.multiplus_ii_48_5000_70_50_id_275_output_voltage_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Output voltage L1;230.26;V;voltage;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:39.740794+00:00
 switch.multiplus_ii_48_5000_70_50_id_275_control_ignore_ac_in_1;switch;MultiPlus-II 48/5000/70-50 (ID: 275) Control ignore AC-in-1;off;;;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834455+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_low_battery_alarm;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Low battery alarm;no_alarm;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834519+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_high_temperature_alarm;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) High temperature alarm;no_alarm;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834583+00:00
-sensor.multiplus_ii_48_5000_70_50_id_275_dc_power;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) DC power;98.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:09.803230+00:00
+sensor.multiplus_ii_48_5000_70_50_id_275_dc_power;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) DC power;1463.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:39.740920+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_high_dc_voltage_alarm;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) High DC voltage alarm;no_alarm;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834711+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_temperature_sensor_alarm;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Temperature sensor alarm;no_alarm;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834773+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_active_ac_input;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Active AC input;not_connected;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834837+00:00
-sensor.multiplus_ii_48_5000_70_50_id_275_output_current_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Output current L1;-1.8;A;current;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:09.801378+00:00
+sensor.multiplus_ii_48_5000_70_50_id_275_output_current_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Output current L1;-7.7;A;current;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:39.741027+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_grid_lost_alarm;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Grid lost alarm;alarm;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.834969+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_overload_alarm;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Overload alarm;no_alarm;;enum;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.835030+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_energy_from_inverter_to_ac_out;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Energy from inverter to AC-out;362.8;kWh;energy;total;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.835093+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_energy_from_out_to_inverter;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Energy from out to inverter;89.5;kWh;energy;total;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:24:29.225877+00:00
-sensor.multiplus_ii_48_5000_70_50_id_275_dc_voltage;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) DC voltage;53.88;V;voltage;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:24:39.733377+00:00
+sensor.multiplus_ii_48_5000_70_50_id_275_dc_voltage;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) DC voltage;54.12;V;voltage;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:39.741106+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_energy_from_inverter_to_ac_in_2;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Energy from inverter to AC-in-2;0.0;kWh;energy;total;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.835284+00:00
 number.multiplus_ii_48_5000_70_50_id_275_current_limit;number;MultiPlus-II 48/5000/70-50 (ID: 275) Current limit;25.0;A;current;;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.835362+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_0_line_1_input_power;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) 0 line 1 input power;0.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.835430+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_energy_from_ac_in_2_to_inverter;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Energy from AC-in-2 to inverter;0.0;kWh;energy;total;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.835496+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_energy_from_ac_in_2_to_ac_out;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Energy from AC-in-2 to AC-out;0.0;kWh;energy;total;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.835559+00:00
-sensor.multiplus_ii_48_5000_70_50_id_275_output_frequency_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Output frequency L1;50.08;Hz;frequency;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:10.914678+00:00
+sensor.multiplus_ii_48_5000_70_50_id_275_output_frequency_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Output frequency L1;49.95;Hz;frequency;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:39.741150+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_energy_from_ac_in_1_to_inverter;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Energy from AC-in-1 to inverter;0.0;kWh;energy;total;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.835690+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_energy_from_ac_out_to_ac_in_1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Energy from AC-out to AC-in-1;0.0;kWh;energy;total;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.835753+00:00
-sensor.multiplus_ii_48_5000_70_50_id_275_output_apparent_power_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Output apparent power L1;-421.0;VA;apparent_power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:09.803192+00:00
-sensor.multiplus_ii_48_5000_70_50_id_275_dc_current;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) DC current;0.4;A;current;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:09.803346+00:00
+sensor.multiplus_ii_48_5000_70_50_id_275_output_apparent_power_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Output apparent power L1;-1766.0;VA;apparent_power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:39.741193+00:00
+sensor.multiplus_ii_48_5000_70_50_id_275_dc_current;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) DC current;25.4;A;current;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:39.741233+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_input_power_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Input power L1;0.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.835941+00:00
-sensor.multiplus_ii_48_5000_70_50_id_275_output_power_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Output power L1;-72.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:09.803263+00:00
+sensor.multiplus_ii_48_5000_70_50_id_275_output_power_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Output power L1;-1497.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:25:39.741271+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_0_line_l2_output_power;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) 0 line L2 output power;0.0;W;power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.836065+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_input_frequency_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Input frequency L1;0.0;Hz;frequency;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.836124+00:00
 sensor.multiplus_ii_48_5000_70_50_id_275_input_apparent_power_l1;sensor;MultiPlus-II 48/5000/70-50 (ID: 275) Input apparent power L1;0.0;VA;apparent_power;measurement;Victron;MultiPlus-II 48/5000/70-50 (ID: 275);Victron Energy;2026-07-22 08:13:39.836184+00:00
@@ -372,21 +372,21 @@ sensor.shelly1_a4_power_2;sensor;Shelly1 A4 Power;0.0;W;power;measurement;Shelly
 sensor.shelly1_a4_power_on_l1_2;sensor;Shelly1 A4 Power on L1;0.0;W;power;measurement;Shelly;Shelly1 A4;Victron Energy;2026-07-22 08:13:39.836719+00:00
 sensor.shelly1_a4_consumption_on_l1_2;sensor;Shelly1 A4 Consumption on L1;28.9;kWh;energy;total;Shelly;Shelly1 A4;Victron Energy;2026-07-22 08:13:39.836837+00:00
 sensor.shelly1_a4_consumption_2;sensor;Shelly1 A4 Consumption;28.9;kWh;energy;total;Shelly;Shelly1 A4;Victron Energy;2026-07-22 08:13:39.836899+00:00
-sensor.smartshunt_300a_id_274_dc_bus_voltage;sensor;SmartShunt 300A (ID: 274) DC bus voltage;53.82;V;voltage;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:25:10.505294+00:00
+sensor.smartshunt_300a_id_274_dc_bus_voltage;sensor;SmartShunt 300A (ID: 274) DC bus voltage;53.97;V;voltage;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:25:39.741367+00:00
 sensor.smartshunt_300a_id_274_capacity;sensor;SmartShunt 300A (ID: 274) Capacity;1300.0;Ah;;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:39.837022+00:00
 sensor.smartshunt_300a_id_274_discharged_energy;sensor;SmartShunt 300A (ID: 274) Discharged energy;1019.1;kWh;energy;total;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:39.837083+00:00
 sensor.smartshunt_300a_id_274_total_charge_cycles;sensor;SmartShunt 300A (ID: 274) Total charge cycles;14;cycles;;total_increasing;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:39.837143+00:00
 sensor.smartshunt_300a_id_274_maximum_voltage;sensor;SmartShunt 300A (ID: 274) Maximum voltage;58.36;V;voltage;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:39.837203+00:00
 sensor.smartshunt_300a_id_274_automatic_syncs;sensor;SmartShunt 300A (ID: 274) Automatic syncs;42;syncs;;total_increasing;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:39.837261+00:00
-sensor.smartshunt_300a_id_274_consumed_amp_hours;sensor;SmartShunt 300A (ID: 274) Consumed amp-hours;-82.1;Ah;;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:24:39.733689+00:00
+sensor.smartshunt_300a_id_274_consumed_amp_hours;sensor;SmartShunt 300A (ID: 274) Consumed amp-hours;-81.7;Ah;;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:25:39.741405+00:00
 sensor.smartshunt_300a_id_274_minimum_voltage;sensor;SmartShunt 300A (ID: 274) Minimum voltage;48.34;V;voltage;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:39.837378+00:00
 sensor.smartshunt_300a_id_274_average_discharge;sensor;SmartShunt 300A (ID: 274) Average discharge;-288.4;Ah;;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:39.837436+00:00
 sensor.smartshunt_300a_id_274_charged_energy;sensor;SmartShunt 300A (ID: 274) Charged energy;1081.0;kWh;energy;total;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:24:10.514234+00:00
 sensor.smartshunt_300a_id_274_last_discharge;sensor;SmartShunt 300A (ID: 274) Last discharge;-212.8;Ah;;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:39.837558+00:00
 sensor.smartshunt_300a_id_274_charge;sensor;SmartShunt 300A (ID: 274) Charge;94.2;%;battery;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:24:29.230916+00:00
-sensor.smartshunt_300a_id_274_time_since_last_full_charge;sensor;SmartShunt 300A (ID: 274) Time since last full charge;4052029;s;duration;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:25:10.503274+00:00
-sensor.smartshunt_300a_id_274_dc_bus_current;sensor;SmartShunt 300A (ID: 274) DC bus current;19.4;A;current;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:25:10.505498+00:00
-sensor.smartshunt_300a_id_274_power;sensor;SmartShunt 300A (ID: 274) Power;1044.1;W;power;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:25:10.505613+00:00
+sensor.smartshunt_300a_id_274_time_since_last_full_charge;sensor;SmartShunt 300A (ID: 274) Time since last full charge;4052058;s;duration;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:25:39.741471+00:00
+sensor.smartshunt_300a_id_274_dc_bus_current;sensor;SmartShunt 300A (ID: 274) DC bus current;61.6;A;current;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:25:39.741510+00:00
+sensor.smartshunt_300a_id_274_power;sensor;SmartShunt 300A (ID: 274) Power;3324.6;W;power;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:25:39.741548+00:00
 sensor.smartshunt_300a_id_274_cumulative_ah_drawn;sensor;SmartShunt 300A (ID: 274) Cumulative Ah drawn;-19215.1;Ah;;total;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:39.837860+00:00
 sensor.smartshunt_300a_id_274_deepest_discharge;sensor;SmartShunt 300A (ID: 274) Deepest discharge;-456.4;Ah;;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:39.837919+00:00
 sensor.smartshunt_300a_id_274_time_to_go;sensor;SmartShunt 300A (ID: 274) Time to go;unavailable;s;duration;measurement;Batterie;SmartShunt 300A (ID: 274);Victron Energy;2026-07-22 08:13:41.313909+00:00
