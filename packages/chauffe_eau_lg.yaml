@@ -1,0 +1,210 @@
+# =============================================================================
+# Water heater control — LG ThinQ heat pump
+# Doc : docs/PILOTAGE-CHAUFFE-EAU-LG.md
+#
+# HEAT_PUMP requires ALL 4 conditions simultaneously :
+#   - off-grid            (ignore_ac_in = on)
+#   - SOC >= 90 %         (SmartShunt 300A)
+#   - irradiance >= 300 W/m2
+#   - tank not yet hot    (< 60 C, or >= 60 C for less than 10 min)
+# Otherwise -> VACATION
+#
+# Setpoints : HEAT_PUMP = 60 C, VACATION = 45 C
+#
+# Ported from logic/water_heater.rs (energymanager, Pi5)
+# Santuario, Badalucco - 24/07/2026
+# =============================================================================
+
+input_number:
+  wh_soc_min:
+    name: "Water heater - minimum SOC"
+    min: 50
+    max: 100
+    step: 1
+    initial: 90
+    unit_of_measurement: "%"
+    icon: mdi:battery-charging
+
+  wh_irradiance_min:
+    name: "Water heater - minimum irradiance"
+    min: 100
+    max: 1000
+    step: 50
+    initial: 300
+    unit_of_measurement: "W/m²"
+    icon: mdi:sun-wireless
+
+  wh_tank_temp_max:
+    name: "Water heater - tank max temperature"
+    min: 40
+    max: 70
+    step: 1
+    initial: 60
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer-high
+
+  wh_setpoint_heat_pump:
+    name: "Water heater - HEAT_PUMP setpoint"
+    min: 40
+    max: 70
+    step: 1
+    initial: 60
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer
+
+  wh_setpoint_vacation:
+    name: "Water heater - VACATION setpoint"
+    min: 30
+    max: 60
+    step: 1
+    initial: 45
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer-low
+
+input_boolean:
+  wh_control_enabled:
+    name: "Water heater - control enabled"
+    initial: on
+    icon: mdi:tune-variant
+
+template:
+  - binary_sensor:
+      # Tank has reached max temperature.
+      # The 'for' delay replaces the Rust temp_max_hold_secs = 600
+      # and self-rearms when temperature drops. No timestamp storage needed.
+      - name: "Water heater tank hot"
+        unique_id: wh_tank_hot
+        icon: mdi:water-thermometer
+        delay_on: "00:10:00"
+        state: >
+          {{ states('sensor.chauffe_eau_current_temperature') | float(-1)
+             >= states('input_number.wh_tank_temp_max') | float(60) }}
+
+  - sensor:
+      # Target mode — port of rules::evaluate (Rust)
+      - name: "Water heater target mode"
+        unique_id: wh_target_mode
+        icon: mdi:heat-pump
+        state: >
+          {% set off_grid   = is_state('sensor.multiplus_ii_48_5000_70_50_id_275_state_of_ignore_ac_in_1','on') %}
+          {% set soc        = states('sensor.smartshunt_300a_id_274_charge') | float(-1) %}
+          {% set irr        = states('sensor.capteur_irradiance_id_40_irradiance') | float(-1) %}
+          {% set soc_min    = states('input_number.wh_soc_min') | float(90) %}
+          {% set irr_min    = states('input_number.wh_irradiance_min') | float(300) %}
+          {% set tank_hot   = is_state('binary_sensor.water_heater_tank_hot','on') %}
+
+          {% if not is_state('input_boolean.wh_control_enabled','on') %}
+            vacation
+          {% elif soc < 0 or irr < 0 %}
+            vacation
+          {% elif off_grid and soc >= soc_min and irr >= irr_min and not tank_hot %}
+            heat_pump
+          {% else %}
+            vacation
+          {% endif %}
+        attributes:
+          reason: >
+            {% set off_grid   = is_state('sensor.multiplus_ii_48_5000_70_50_id_275_state_of_ignore_ac_in_1','on') %}
+            {% set soc        = states('sensor.smartshunt_300a_id_274_charge') | float(-1) %}
+            {% set irr        = states('sensor.capteur_irradiance_id_40_irradiance') | float(-1) %}
+            {% set soc_min    = states('input_number.wh_soc_min') | float(90) %}
+            {% set irr_min    = states('input_number.wh_irradiance_min') | float(300) %}
+            {% set tank_hot   = is_state('binary_sensor.water_heater_tank_hot','on') %}
+            {% if not is_state('input_boolean.wh_control_enabled','on') %}
+              control disabled
+            {% elif soc < 0 or irr < 0 %}
+              data unavailable
+            {% elif not off_grid %}
+              grid connected
+            {% elif soc < soc_min %}
+              SOC {{ soc }} % < {{ soc_min }} %
+            {% elif irr < irr_min %}
+              irradiance {{ irr }} W/m2 < {{ irr_min }}
+            {% elif tank_hot %}
+              tank at {{ states('sensor.chauffe_eau_current_temperature') }} C for 10 min
+            {% else %}
+              all 4 conditions met
+            {% endif %}
+          inputs: >
+            grid={{ 'off' if is_state('sensor.multiplus_ii_48_5000_70_50_id_275_state_of_ignore_ac_in_1','on') else 'connected' }} |
+            soc={{ states('sensor.smartshunt_300a_id_274_charge') }} |
+            irradiance={{ states('sensor.capteur_irradiance_id_40_irradiance') }} |
+            tank={{ states('sensor.chauffe_eau_current_temperature') }} |
+            tank_hot={{ states('binary_sensor.water_heater_tank_hot') }}
+
+      # Target setpoint for the current target mode
+      - name: "Water heater target setpoint"
+        unique_id: wh_target_setpoint
+        unit_of_measurement: "°C"
+        device_class: temperature
+        state_class: measurement
+        icon: mdi:thermometer-lines
+        state: >
+          {% if states('sensor.water_heater_target_mode') == 'heat_pump' %}
+            {{ states('input_number.wh_setpoint_heat_pump') | int(60) }}
+          {% else %}
+            {{ states('input_number.wh_setpoint_vacation') | int(45) }}
+          {% endif %}
+
+automation:
+  # Single automation : aligns mode and setpoint on the computed target.
+  # Runs every 5 min (same cycle as the Rust control_task) and on target change.
+  # 15 min cooldown between mode changes protects the compressor.
+  - alias: "Water heater - apply target mode and setpoint"
+    id: wh_apply_target
+    mode: single
+    max_exceeded: silent
+    trigger:
+      - platform: time_pattern
+        minutes: "/5"
+      - platform: state
+        entity_id: sensor.water_heater_target_mode
+      - platform: homeassistant
+        event: start
+    condition:
+      - condition: template
+        value_template: >
+          {{ states('sensor.water_heater_target_mode') in ['heat_pump','vacation'] }}
+      # Act only if mode or setpoint differs from target
+      - condition: template
+        value_template: >
+          {{ state_attr('water_heater.chauffe_eau','operation_mode')
+               != states('sensor.water_heater_target_mode')
+             or (state_attr('water_heater.chauffe_eau','temperature') | int(-1))
+               != (states('sensor.water_heater_target_setpoint') | int(45)) }}
+    action:
+      # --- Mode change, subject to 15 min cooldown ---
+      - if:
+          - condition: template
+            value_template: >
+              {{ state_attr('water_heater.chauffe_eau','operation_mode')
+                 != states('sensor.water_heater_target_mode') }}
+          - condition: template
+            value_template: >
+              {{ (as_timestamp(now())
+                  - as_timestamp(state_attr('automation.water_heater_apply_target_mode_and_setpoint',
+                                            'last_triggered'), 0)) >= 900
+                 or state_attr('automation.water_heater_apply_target_mode_and_setpoint',
+                               'last_triggered') is none }}
+        then:
+          - service: water_heater.set_operation_mode
+            target:
+              entity_id: water_heater.chauffe_eau
+            data:
+              operation_mode: "{{ states('sensor.water_heater_target_mode') }}"
+          # temp_set_delay_secs = 15 s (Rust)
+          - delay:
+              seconds: 15
+
+      # --- Setpoint alignment, always checked ---
+      - if:
+          - condition: template
+            value_template: >
+              {{ (state_attr('water_heater.chauffe_eau','temperature') | int(-1))
+                 != (states('sensor.water_heater_target_setpoint') | int(45)) }}
+        then:
+          - service: water_heater.set_temperature
+            target:
+              entity_id: water_heater.chauffe_eau
+            data:
+              temperature: "{{ states('sensor.water_heater_target_setpoint') | int(45) }}"
