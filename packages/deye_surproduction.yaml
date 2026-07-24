@@ -1,8 +1,12 @@
 # =============================================================================
 # Pilotage des micro-onduleurs DEYE en surproduction
 # Doc : docs/PILOTAGE-DEYE-SURPRODUCTION.md
-# Regle : etat MPPT le plus avance -> bridage Active Power Regulation
-#         Storage -> switch OFF
+#
+# Anticipation par tension MPPT :
+#   >= 55.20 V (Absorption 55.50 - 0.30) -> 40 %
+#   >= 54.20 V (Float      54.50 - 0.30) -> 15 %  [apres Absorption]
+# Garde-fou : courant SmartShunt < 2 A -> 100 % (decharge ou charge terminee)
+# Etat MPPT Float/Storage -> 15 % / switch OFF
 # =============================================================================
 
 input_number:
@@ -33,6 +37,33 @@ input_number:
     unit_of_measurement: "%"
     icon: mdi:solar-power-variant
 
+  deye_seuil_absorption:
+    name: "DEYE - seuil tension Absorption"
+    min: 53.0
+    max: 57.0
+    step: 0.1
+    initial: 55.2
+    unit_of_measurement: "V"
+    icon: mdi:flash
+
+  deye_seuil_float:
+    name: "DEYE - seuil tension Float"
+    min: 52.0
+    max: 56.0
+    step: 0.1
+    initial: 54.2
+    unit_of_measurement: "V"
+    icon: mdi:flash
+
+  deye_courant_mini_charge:
+    name: "DEYE - courant mini pour brider"
+    min: 0
+    max: 20
+    step: 1
+    initial: 2
+    unit_of_measurement: "A"
+    icon: mdi:current-dc
+
 input_boolean:
   deye_regulation_enabled:
     name: "DEYE - regulation active"
@@ -42,7 +73,6 @@ input_boolean:
 template:
   - sensor:
       # Etat MPPT le plus avance parmi tous les SmartSolar
-      # Extensible : un nouveau MPPT est pris en compte automatiquement
       - name: "MPPT etat consolide"
         unique_id: mppt_etat_consolide
         icon: mdi:solar-panel
@@ -69,34 +99,109 @@ template:
             {% endfor %}
             {{ ns.l | join(' | ') }}
 
-      # Consigne de puissance a appliquer aux DEYE
+      # Tension batterie la plus elevee vue par les MPPT
+      # C'est elle qui declenche leur bascule, pas celle du SmartShunt
+      - name: "MPPT tension max"
+        unique_id: mppt_tension_max
+        unit_of_measurement: "V"
+        device_class: voltage
+        state_class: measurement
+        icon: mdi:flash
+        state: >
+          {% set ns = namespace(v = 0.0) %}
+          {% for e in states.sensor
+             if e.entity_id.startswith('sensor.smartsolar')
+             and e.entity_id.endswith('_dc_battery_bus_voltage') %}
+            {% set x = e.state | float(0) %}
+            {% if x > ns.v %}{% set ns.v = x %}{% endif %}
+          {% endfor %}
+          {{ ns.v | round(2) }}
+        attributes:
+          tension_detail: >
+            {% set ns = namespace(l = []) %}
+            {% for e in states.sensor
+               if e.entity_id.startswith('sensor.smartsolar')
+               and e.entity_id.endswith('_dc_battery_bus_voltage') %}
+              {% set ns.l = ns.l + [e.name ~ ' = ' ~ e.state] %}
+            {% endfor %}
+            {{ ns.l | join(' | ') }}
+
+      # Consigne de puissance
       - name: "DEYE consigne cible"
         unique_id: deye_consigne_cible
         unit_of_measurement: "%"
         icon: mdi:speedometer
         state: >
           {% set etat = states('sensor.mppt_etat_consolide') %}
-          {% if not is_state('input_boolean.deye_regulation_enabled','on') %}
-            100
-          {% elif etat in ['inconnu','unknown','unavailable'] %}
-            100
-          {% elif etat == 'absorption' %}
-            {{ states('input_number.deye_power_absorption') | int(40) }}
-          {% elif etat == 'float' %}
-            {{ states('input_number.deye_power_float') | int(15) }}
-          {% elif etat == 'storage' %}
-            1
-          {% else %}
-            {{ states('input_number.deye_power_bulk') | int(100) }}
-          {% endif %}
+          {% set v    = states('sensor.mppt_tension_max') | float(0) %}
+          {% set i    = states('sensor.smartshunt_300a_id_274_dc_bus_current') | float(0) %}
+          {% set imin = states('input_number.deye_courant_mini_charge') | float(2) %}
+          {% set sabs = states('input_number.deye_seuil_absorption') | float(55.2) %}
+          {% set sflo = states('input_number.deye_seuil_float') | float(54.2) %}
+          {% set pabs = states('input_number.deye_power_absorption') | int(40) %}
+          {% set pflo = states('input_number.deye_power_float') | int(15) %}
+          {% set pblk = states('input_number.deye_power_bulk') | int(100) %}
 
-      # Etat marche/arret a appliquer aux DEYE
+          {% if not is_state('input_boolean.deye_regulation_enabled','on') %}
+            {{ pblk }}
+          {% elif etat in ['inconnu','unknown','unavailable'] or v == 0 %}
+            {{ pblk }}
+
+          {# --- GARDE-FOU : decharge ou charge terminee -> pleine puissance --- #}
+          {% elif i < imin %}
+            {{ pblk }}
+
+          {# --- Etat MPPT deja en Float ou Storage --- #}
+          {% elif etat in ['float','storage'] %}
+            {{ pflo }}
+
+          {# --- Anticipation par tension, uniquement en charge --- #}
+          {% elif etat == 'absorption' and v >= sflo %}
+            {{ pflo }}
+          {% elif v >= sabs %}
+            {{ pabs }}
+          {% elif etat == 'absorption' %}
+            {{ pabs }}
+          {% else %}
+            {{ pblk }}
+          {% endif %}
+        attributes:
+          raison: >
+            {% set etat = states('sensor.mppt_etat_consolide') %}
+            {% set v    = states('sensor.mppt_tension_max') | float(0) %}
+            {% set i    = states('sensor.smartshunt_300a_id_274_dc_bus_current') | float(0) %}
+            {% set imin = states('input_number.deye_courant_mini_charge') | float(2) %}
+            {% set sabs = states('input_number.deye_seuil_absorption') | float(55.2) %}
+            {% set sflo = states('input_number.deye_seuil_float') | float(54.2) %}
+            {% if not is_state('input_boolean.deye_regulation_enabled','on') %}
+              regulation desactivee
+            {% elif etat in ['inconnu','unknown','unavailable'] or v == 0 %}
+              donnees indisponibles
+            {% elif i < imin %}
+              decharge ou charge terminee ({{ i }} A)
+            {% elif etat in ['float','storage'] %}
+              etat MPPT {{ etat }}
+            {% elif etat == 'absorption' and v >= sflo %}
+              absorption + tension {{ v }} V >= seuil float
+            {% elif v >= sabs %}
+              anticipation : tension {{ v }} V >= seuil absorption
+            {% elif etat == 'absorption' %}
+              etat MPPT absorption
+            {% else %}
+              bulk
+            {% endif %}
+
+      # Etat marche/arret
       - name: "DEYE switch cible"
         unique_id: deye_switch_cible
         icon: mdi:power
         state: >
           {% set etat = states('sensor.mppt_etat_consolide') %}
+          {% set i    = states('sensor.smartshunt_300a_id_274_dc_bus_current') | float(0) %}
+          {% set imin = states('input_number.deye_courant_mini_charge') | float(2) %}
           {% if not is_state('input_boolean.deye_regulation_enabled','on') %}
+            on
+          {% elif i < imin %}
             on
           {% elif etat == 'storage' %}
             off
