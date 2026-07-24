@@ -1,0 +1,15 @@
+# =============================================================================
+# Lissage de l'irradiance — source : integration Victron (Pi5 -> Venus OS)
+# Entite source : sensor.capteur_irradiance_id_40_irradiance
+# Doc : docs/CAPTEUR-IRRADIANCE-MQTT.md
+# =============================================================================
+
+sensor:
+  - platform: filter
+    name: "Irradiance lissee"
+    unique_id: santuario_irradiance_lissee
+    entity_id: sensor.capteur_irradiance_id_40_irradiance
+    filters:
+      - filter: time_simple_moving_average
+        window_size: "00:05"
+        precision: 0
