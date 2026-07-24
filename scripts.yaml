@@ -1,0 +1,19 @@
+export_entities_csv:
+  alias: "Export entités CSV complet"
+  sequence:
+    - action: notify.send_message
+      target:
+        entity_id: notify.file
+      data:
+        message: |-
+          entity_id;domain;device;friendly_name;state;unit;device_class;state_class;area;integration;last_changed
+          {%- for s in states %}
+          {{ s.entity_id }};{{ s.domain }};{{ device_attr(s.entity_id, 'name') | default('') }};{{ s.name }};{{ s.state }};{{ s.attributes.unit_of_measurement | default('') }};{{ s.attributes.device_class | default('') }};{{ s.attributes.state_class | default('') }};{{ area_name(s.entity_id) | default('') }};{{ device_attr(s.entity_id, 'manufacturer') | default('') }};{{ s.last_changed }}
+          {%- endfor %}
+    - delay: "00:00:05"
+    - action: shell_command.push_entities_github
+    - action: persistent_notification.create
+      data:
+        title: "Export entités terminé"
+        message: >-
+          {{ states | count }} entités exportées.
